@@ -3,7 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color:#708090 ;
+    background-color:#2F4F4F ;
 }
 /* title style */
 h1 {
@@ -52,6 +52,19 @@ nav a:hover {
 .about-content {
     display: flex;
     align-items: center;
+    justify-content: center; /* Centers the flex items horizontally */
+    gap: 30px;
+    margin-top: 20px;
+    text-align: left; /* Keep text left-aligned within the paragraph */
+}
+
+.about-content p {
+    flex: 1;
+    max-width: 400px; /* Limits paragraph width for better readability */
+}
+.about-content {
+    display: flex;
+    align-items: center;
     gap: 30px;
     margin-top: 20px;
 }
@@ -96,9 +109,9 @@ nav a:hover {
     border-radius: 5px;
     margin-bottom: 15px;
 }
-/* Contact style */
-
-#contact {
+/* Skills style */
+#skills {
+    list-style: none;
     text-align: center;
     margin-bottom: 40px;
     background-color: lightgray;
@@ -107,4 +120,109 @@ nav a:hover {
     width: 60%;
     margin: 0 auto 40px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+li {
+    display: inline-block;
+    background-color: #f0f0f0;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 18px;
+}
+/* Contact style */
+#contact {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+#contact p {
+    margin: 0;
+    display: inline;
+}
+
+#contact p:not(:last-child)::after {
+    content: " | ";
+    margin: 0 10px;
+}
+
+#contact a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    color: white;
+}
+/* Message style */
+#positive-messages {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: lightgray;
+    padding: 30px;
+    border-radius: 5px;
+    width: 60%;
+    margin: 0 auto 40px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.generate-btn {
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 20px 0;
+    transition: background-color 0.3s;
+}
+
+.generate-btn:hover {
+    background-color: #555;
+}
+
+.message-output {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-output p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+#generate-message-btn:target {
+    animation: highlight 1.5s ease-in-out;
+}
+
+@keyframes highlight {
+    0%, 100% {
+        background-color: #333;
+        transform: scale(1);
+    }
+    50% {
+        background-color: #ff6b6b;
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+    }
+}
+/* Add padding to body to prevent content from being hidden behind fixed footer */
+body {
+    padding-bottom: 50px;
 }
